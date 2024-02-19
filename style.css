@@ -1,0 +1,72 @@
+*{
+    padding: 10px;
+}
+
+body{
+    width: 95%;
+    height: 90vh;
+    display: flex;
+    background-image: url(Assets/img.jpeg);
+    overflow: auto;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.header{
+
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 100px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.navigation{
+    display: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    padding: 15px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navigation a{
+    content: "";
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 50px;
+    width: 100%;
+    height: 3px;
+    text-decoration: none;
+    padding: 100px;
+}
+
+.navigation .btnLogin-popup{
+    width: 120px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 750px;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #fff;
+    color: #162938;
+}
