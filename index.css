@@ -121,7 +121,19 @@ body{
     height: 50px;
     border-bottom: 2px solid #ffffff;
   }
-  
+
+
+/* tirar o autocomplete background */
+  .input-box input:-webkit-autofill {
+    -webkit-background-clip: text;
+}
+
+
+/* trocar a cor da letra do autocomplete para branco */
+.input-box input:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff !important;
+}
+
   .input-box label{
     position: absolute;
     top: 50%;

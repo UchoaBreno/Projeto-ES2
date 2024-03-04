@@ -8,74 +8,87 @@
 body {
   margin: 0;
   padding: 0;
-  height: 1500px;
+  height: 100vh; /* Corrigido para 100vh */
   width: 100%;
 }
 
-.header{
+.logo{
+  position: fixed;
+  top: 0px;
+  left: 10px;
+  font-size: 45px;
+}
+
+.header {
+  align-items: center;
+  justify-content: right;
   display: flex;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.25);
   top: 0;
   height: 8vh;
   width: 100%;
-  padding: 20px 100px;
-  justify-content: space-between;
-  align-items: center;
+  padding: 20px 20px; /* Ajuste o padding horizontal conforme necessário */
   z-index: 1;
-  height: 60px;
   backdrop-filter: blur(10px);
 }
 
-main{
-height: 100vh;
+.main {
+  height: 100vh; /* Corrigido para 100vh */
 }
 
-.img-background{
-
-opacity: 0.2;
-
+.img-background {
   opacity: 0.2;
-
 }
 
-img{
-width: 100%;
-height: 175vh;
+img {
+  width: 100%;
+  height: auto; /* Corrigido para 'auto' para manter proporções */
 }
 
-.navigation a{
-font-style: italic;
-  position: relative;
+.navigation {
+  display: flex;
+}
+
+.navigation a {
+  position: relative; /* Adiciona posição relativa para que o ::after seja posicionado em relação a este elemento */
   font-size: 1.1em;
-  font-weight: 600;
-  margin-left: 30px;
-  margin-top: 20px;
-  margin: 100px;
+  font-weight: 500;
   text-decoration: none;
   color: #000000;
+  margin-top: 20px;
+  margin-left: 40px;
+  padding: 5px 30px;
 }
 
-.navigation a::after{
+@media screen and (max-width: 900px) {
+  .navigation a {
+    margin-top: 10px;
+    padding: 0 10px; /* Ajuste o padding horizontal para a tela menor que 900 pixels */
+    margin-left: 10px
+  }
+}
+
+.navigation a::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 100%; /* Largura inicial maior */
   height: 3px;
   background: black;
   border-radius: 5px;
   left: 0;
-  bottom: -10px;
+  bottom: -5px; /* Ajuste a distância do sublinhado em relação ao texto */
   transform-origin: right;
-  transform: scaleX(0);
-  transition: transform .5s;
+  transform: scaleX(0); /* Comece com o sublinhado oculto */
+  transition: transform .5s; /* Apenas a transição de transformação é necessária */
 }
 
-.navigation a:hover::after{
+.navigation a:hover::after {
   transform-origin: left;
-  transform: scaleX(1);
+  transform: scaleX(1); /* Ajuste diretamente para mostrar o sublinhado */
 }
 
-.first{
+.first {
   position: absolute;
   top: 0;
   left: 15px;
@@ -85,9 +98,15 @@ font-style: italic;
   height: 100%;
   max-width: 50vw;
   max-height: 15vh;
+  margin-left: 10px;
 }
 
-.input-box{
+/* Estilos para ocultar o h1 quando a classe 'hide' está presente */
+.hide {
+  display: none;
+}
+
+.input-box {
   position: absolute;
   left: 0;
   top: 25%;
@@ -95,148 +114,184 @@ font-style: italic;
   display: flex;
 }
 
-.input-box ul{
+.input-box ul {
   position: absolute;
   left: 0;
   top: 0;
   justify-content: center;
   align-items: center;
-  margin: 20px;
   background-color: rgba(0, 0, 0, 0.5);
+  margin-left: 25px;
 }
 
-.input-box ul li{
+.input-box ul li {
   display: inline;
 }
 
-.input-box ul li p{
+.input-box ul li p {
   text-decoration: none;
   list-style: none;
   text-align: border-box;
   color: #fff;
-  white-space: nowrap; /* Impede que o texto quebre */
+  white-space: nowrap;
   padding: 20px;
+  font-weight: 200;
 }
 
-.icon{
-color: #000000;
-margin-right: 10px;
+/* Estilos para o botão hamburguer */
+.hamburger-btn {
+  display: none; /* Ocultar o botão por padrão */
+  cursor: pointer;
+  width: 20px;
+  height: 30px;
+  margin-left: 5px;  
+}
+
+/* Estilos para os itens do menu */
+.menu-items {
+  position: absolute;
+  top: 50px; /* Defina a distância do topo conforme necessário */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para os itens do menu quando o menu estiver oculto */
+.menu-items.hide {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  /* Mostrar o botão hamburguer quando a tela for menor que 800px */
+  .hamburger-btn {
+    display: block;
+  }
+
+  /* Esconder os itens do menu quando a tela for menor que 800px */
+  .menu-items {
+    display: none;
+  }
+
+  /* Estilos para os itens do menu quando o menu estiver visível */
+  .menu-items.show {
+    display: block;
+  }
+}
+
+.icon {
+  color: #000000;
+  margin-right: 10px;
 }
 
 .container {
+  position: absolute;
 
-position: relative;
-width: 400px; /* ou qualquer largura desejada */
-height: 400px; /* ou qualquer altura desejada */
-}
-
-.container img {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(190%, -300%);
-max-width: 100%; /* ou qualquer largura máxima desejada */
-max-height: 100%;
-
-  position: relative;
+  /* mover a imagem top e right */
+  top: 80%;
+  right: 10%;
+  transform: translateY(-50%);
   width: 400px; /* ou qualquer largura desejada */
-  height: 200px; /* ou qualquer altura desejada */
+  height: 400px; /* ou qualquer altura desejada */
 }
 
 .container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para manter a proporção e preencher o contêiner */
+}
+
+/* Oculta a imagem em telas menores que 768px */
+@media screen and (max-width: 900px) {
+  .container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .seta {
+      position: fixed;
+      top: -100px; /* Posição inicial do elemento */
+      left: 430px; /* Posição inicial do elemento */
+      transition: left 0.7s ease; /* Transição suave ao alterar a posição */
+  }
+}
+
+.arrow {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(250%, -210%);
-  max-width: 100vw; /* ou qualquer largura máxima desejada */
-  max-height: 75vh;
-  
-
+  height: 50px;
+  margin-top: 52vh;
+  width: 75px;
 }
 
-.seta{
-margin-top: 50px;
+.ponto1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  margin-top: 40vh;
+  width: 75px;
 }
 
-.arrow{
-position: absolute;
-top: 50%;
-left: 50%;
-height: 50px;
-margin-top: 52vh;
-width: 75px;
+.ponto2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50px;
+  margin-top: 47vh;
+  width: 75px;
 }
 
-.ponto1{
-position: absolute;
-top: 50%;
-left: 50%;
-height: 50px;
-margin-top: 40vh;
-width: 75px;
-}
-
-.ponto2{
-position: absolute;
-top: 50%;
-left: 50%;
-height: 50px;
-margin-top: 47vh;
-width: 75px;
-}
-
-.input-box-center{
-
-position: absolute;
-top: 110vh;
-left: 80vh;
-height: 30vh;
-width: 30vw;
-backdrop-filter: blur(7px);
-background-color: rgba(0, 0, 0, 0.25);
-list-style: none;
-}
-
-.input-box-center ul li{
-list-style: none;
-}
-
-.input-box-center ul li p{
-white-space: nowrap;
-font-size: 1.2em;
-text-decoration: none;
-list-style: none;
-padding: 10px;
-
+.input-box-center {
   position: absolute;
   top: 110vh;
   left: 80vh;
-  height: 20vh;
-  width: 45vh;
+  height: 30vh;
+  width: 32vw;
   backdrop-filter: blur(7px);
   background-color: rgba(0, 0, 0, 0.25);
   list-style: none;
 }
 
-.input-box-center ul li{
-
-  list-style: none;
+@media screen and (max-width: 900px) {
+  /* ajustar box center com tela menor que 900px*/
+  .input-box-center {
+    height: 50vh;
+    width: 93vw;
+    margin-top: 5vh;
+  }
 }
 
-.input-box-center ul li p{
+.input-box-center ul li {
+  list-style: none;
+  padding: 10px;
+}
+
+.input-box-center ul li p {
   white-space: nowrap;
   font-size: 1.2em;
   text-decoration: none;
   list-style: none;
   padding: 10px;
-
+  word-spacing: 2px;
 }
 
-.input-box-center ul li a:hover{
+.input-box-center ul li {
+  list-style: none;
+}
 
+.input-box-center ul li p {
+  white-space: nowrap;
+  font-size: 1.2em;
+  text-decoration: none;
+  list-style: none;
+  padding: 10px;
+  font-weight: 500;
+}
 
-color: red;
-
+.input-box-center ul li a:hover {
   color: red;
-
 }

@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Inicial</title>
     <link rel="stylesheet" href="principal.css">
+
+    <script src="principal.js"></script>
 </head>
 
 <body>
+    
      <!-- Conteúdo do cabeçalho -->
     <header class="header">
+        <span class="logo"><ion-icon name="car-outline"></ion-icon></span>
         <nav class="navigation">
             <a href="#">Inicio</a>
             <a href="#">Quem somos ?</a>
@@ -25,18 +29,19 @@
 
         <h1 class="first">Seu carro foi furtado ou você bebeu demais e não lembra onde deixou ? Nós temos a solução</h1>
 
-        <div class="input-box">
-            <ul>
+        <div class="input-box"> 
+            <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+            <ul class="menu-items">
                 <li>
-                    <p><strong><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Equipamento de rastreio do Elon Musk</strong></p>
+                    <p><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Equipamento de rastreio do Elon Musk</p>
                     <br>
-                    <p><strong><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Posições em tempo real</strong></p>
+                    <p><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Posições em tempo real</p>
                     <br>
-                    <p><strong><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Sistema integrado de bloqueio a distancia</strong></p>
+                    <p><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Sistema integrado de bloqueio a distancia</p>
                     <br>
-                    <p><strong><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Relatório de velocidade e quilometros percorridos</strong></p>
+                    <p><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Relatório de velocidade e quilometros percorridos</p>
                     <br>
-                    <p><strong><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Central de atendimento 24h</strong></p>
+                    <p><ion-icon class="icon" name="checkmark-circle-outline"></ion-icon>Central de atendimento 24h</p>
                 </li>
             </ul>
         </div>
@@ -53,15 +58,10 @@
         <div class="input-box-center">
             <ul>
                 <li>
-                    <p><strong>Contrate-nos agora por um preço que cabe</strong></p>
-                    <p><strong>no seu bolso tudo por apenas 29,90 mensais</strong></p>
-                    <br>
-<<<<<<< HEAD
-                    <p><strong>Contate com nosso <a href="whatsapp.html">whatsapp</a> ou <a href="#">aperte aqui</a></strong></p>
-=======
-                    <p><strong>Contate com nosso <a href="#">whatsapp</a> ou <a href="#">aperte aqui</a></strong></p>
->>>>>>> 1c1b1f879d70c838c2fc81c77c661ce84bdf7a49
-                    <p><strong>para continuar</strong></p>
+                    <p><strong>Contrate-nos</strong> agora por um preço que cabe</p>
+                    <p>no seu bolso tudo por apenas 29,90R$ mensais.</p>
+                    <p>Contate com nosso <a href="whatsapp.html">whatsapp</a> ou <a href="#">aperte aqui</a></p>
+                    <p>para ter mais informações</p>
                 </li>
             </ul>
         </div>
