@@ -1,0 +1,15 @@
+body{
+    min-height: 95vh;
+}
+
+
+.map{
+    position: fixed;
+    top: 0;
+    left: 0;
+    border: none;
+    overflow: hidden;
+    width: 99vw;
+    height: 97vh;
+    max-height: 100vh;
+}
