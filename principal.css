@@ -63,8 +63,8 @@ img {
 
 @media screen and (max-width: 900px) {
   .navigation a {
-    margin-top: 10px;
-    padding: 0 10px; /* Ajuste o padding horizontal para a tela menor que 900 pixels */
+    margin-top: 50px;
+    padding: 0 5px; /* Ajuste o padding horizontal para a tela menor que 900 pixels */
     margin-left: 10px
   }
 }
@@ -112,6 +112,13 @@ img {
   top: 25%;
   justify-content: center;
   display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  .input-box{
+    top: 210px;
+    left: -20px;
+  }
 }
 
 .input-box ul {
@@ -167,6 +174,9 @@ img {
   /* Mostrar o botão hamburguer quando a tela for menor que 800px */
   .hamburger-btn {
     display: block;
+    position: fixed;
+    top: 180px;
+    left: 0px;
   }
 
   /* Esconder os itens do menu quando a tela for menor que 800px */
@@ -211,10 +221,7 @@ img {
 
 @media screen and (max-width: 900px) {
   .seta {
-      position: fixed;
-      top: -100px; /* Posição inicial do elemento */
-      left: 430px; /* Posição inicial do elemento */
-      transition: left 0.7s ease; /* Transição suave ao alterar a posição */
+      display: none;
   }
 }
 
@@ -246,28 +253,36 @@ img {
 }
 
 .input-box-center {
+  display: flex;
   position: absolute;
-  top: 110vh;
-  left: 80vh;
-  height: 30vh;
-  width: 32vw;
+  flex: 1 0 200px;
+  align-items: center;
+  justify-content: center;
+  top: 1020px;
+  left: 650px;
+  height: 27vh;
+  width: 30vw;
   backdrop-filter: blur(7px);
   background-color: rgba(0, 0, 0, 0.25);
   list-style: none;
 }
 
 @media screen and (max-width: 900px) {
-  /* ajustar box center com tela menor que 900px*/
   .input-box-center {
-    height: 50vh;
-    width: 93vw;
-    margin-top: 5vh;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: auto; /* altura automática para ajustar ao conteúdo */
+    width: 100%; /* ocupar toda a largura disponível */
+    top: 70vh; /* reposicionar verticalmente conforme necessário */
+    left: auto; /* reposicionar horizontalmente conforme necessário */
+    padding: 10px; /* opcional: adicionar espaço interno */
+    box-sizing: border-box; /* incluir preenchimento no cálculo da largura */
+    overflow: hidden;
   }
 }
 
 .input-box-center ul li {
   list-style: none;
-  padding: 10px;
 }
 
 .input-box-center ul li p {
@@ -276,7 +291,7 @@ img {
   text-decoration: none;
   list-style: none;
   padding: 10px;
-  word-spacing: 2px;
+  word-spacing: 1px;
 }
 
 .input-box-center ul li {
@@ -288,7 +303,6 @@ img {
   font-size: 1.2em;
   text-decoration: none;
   list-style: none;
-  padding: 10px;
   font-weight: 500;
 }
 
