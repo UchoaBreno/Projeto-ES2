@@ -50,6 +50,18 @@ img {
   display: flex;
 }
 
+.login{
+  border: none;
+  background: none;
+  position: absolute;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  right:0;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
 .navigation a {
   position: relative; /* Adiciona posição relativa para que o ::after seja posicionado em relação a este elemento */
   font-size: 1.1em;
@@ -63,10 +75,16 @@ img {
 
 @media screen and (max-width: 900px) {
   .navigation a {
-    margin-top: 50px;
-    padding: 0 5px; /* Ajuste o padding horizontal para a tela menor que 900 pixels */
-    margin-left: 10px
+    margin-top: 3vh;
+    padding: 0 1px; /* Ajuste o padding horizontal para a tela menor que 900 pixels */
+    left: -20px;
   }
+  .logo{
+    display: none;
+  }
+  .login{
+    right: -50px;
+    }
 }
 
 .navigation a::after {
@@ -109,15 +127,15 @@ img {
 .input-box {
   position: absolute;
   left: 0;
-  top: 25%;
+  top: 30%;
   justify-content: center;
   display: flex;
 }
 
 @media screen and (max-width: 900px) {
   .input-box{
-    top: 210px;
-    left: -20px;
+    top: 15%;
+    left: -5%;
   }
 }
 
@@ -175,8 +193,8 @@ img {
   .hamburger-btn {
     display: block;
     position: fixed;
-    top: 180px;
-    left: 0px;
+    top: 10%;
+    left: 1%;
   }
 
   /* Esconder os itens do menu quando a tela for menor que 800px */
@@ -258,10 +276,10 @@ img {
   flex: 1 0 200px;
   align-items: center;
   justify-content: center;
-  top: 1020px;
-  left: 650px;
-  height: 27vh;
-  width: 30vw;
+  top: 107%;
+  left: 40%;
+  height: 200px;
+  width: 450px;
   backdrop-filter: blur(7px);
   background-color: rgba(0, 0, 0, 0.25);
   list-style: none;
